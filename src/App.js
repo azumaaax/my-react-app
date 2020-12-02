@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-// import './App.css';
-import styles from './App.module.scss';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Login from './components/pages/login';
+import Confirm from './components/pages/confirm';
+import Top from './components/pages/top';
+import './App.scss';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className={styles.test}>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Route exact path="/" component={Login}></Route>
+      <Route path="/top" component={Top}></Route>
+      <Route path="/confirm" component={Confirm}></Route>
+    </Router>
   );
 }
 

@@ -1,0 +1,40 @@
+
+@import "../../variables.scss";
+
+
+.title {
+    font-size: $font-l;
+    margin: 1em;
+}
+
+.form {
+    font-size: $font-default;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 1em;
+      dt
+    , dd {
+        display: inline-block;
+    }
+
+    dt {
+        width: 20%;
+    }
+    dd {
+        width: 80%;
+        input {
+            font-size: $font-default;
+        }
+    }
+
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    font-size: $font-default;
+}
