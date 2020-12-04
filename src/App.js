@@ -4,14 +4,15 @@ import Login from './components/pages/login';
 import Confirm from './components/pages/confirm';
 import Top from './components/pages/top';
 import './App.scss';
+import SYSTEM_CONST from './system_const';
 
 
 function App() {
   return (
     <Router>
-      <Route exact path="/" component={Login}></Route>
-      <Route path="/top" component={Top}></Route>
-      <Route path="/confirm" component={Confirm}></Route>
+      <Route exact path={SYSTEM_CONST.URL.LOGIN} component={Login}></Route>
+      <Route path={SYSTEM_CONST.URL.TOP} component={Top}></Route>
+      <Route path={SYSTEM_CONST.URL.CONFIRM} component={Confirm}></Route>
     </Router>
   );
 }
