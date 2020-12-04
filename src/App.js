@@ -7,7 +7,6 @@ import './App.scss';
 import SYSTEM_CONST from './system_const';
 
 
-
 function App() {
   return (
     <Router>
