@@ -5,16 +5,17 @@ import Confirm from './components/pages/confirm';
 import Top from './components/pages/top';
 import About from './components/pages/about';
 import './App.scss';
+import SYSTEM_CONST from './system_const';
 
 // test commmit
 
 function App() {
   return (
     <Router>
-      <Route exact path="/" component={Login}></Route>
-      <Route path="/top" component={Top}></Route>
-      <Route path="/confirm" component={Confirm}></Route>
-      <Route path="/about" component={About}></Route>
+      <Route path={SYSTEM_CONST.URL.LOGIN}   component={Login} exact></Route>
+      <Route path={SYSTEM_CONST.URL.TOP}     component={Top}></Route>
+      <Route path={SYSTEM_CONST.URL.CONFIRM} component={Confirm}></Route>
+      <Route path={SYSTEM_CONST.URL.ABOUT}   component={About}></Route>
     </Router>
   );
 }

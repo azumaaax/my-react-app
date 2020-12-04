@@ -7,7 +7,8 @@ const Login = () => {
 
   // 認証
   const onClickLogin = () => {
-    console.log('auth');
+    // console.log('auth');
+    location.href = SYSTEM_CONST.URL.TOP;
   };
 
 

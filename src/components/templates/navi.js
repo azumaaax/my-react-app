@@ -1,4 +1,5 @@
 import React from 'react';
+import SYSTEM_CONST from '../../system_const';
 import styles from './navi.module.scss';
 
 const Navi = () => {
@@ -10,10 +11,10 @@ const Navi = () => {
 
   return (
     <ul className={styles.navi}>
-      <li><span data-link="/" onClick={onClickLink}>login</span></li>
-      <li><span data-link="/top" onClick={onClickLink}>top</span></li>
-      <li><span data-link="/confirm" onClick={onClickLink}>confirm</span></li>
-      <li><span data-link="/about" onClick={onClickLink}>about</span></li>
+      <li><span data-link={SYSTEM_CONST.URL.TOP}     onClick={onClickLink}>top</span></li>
+      <li><span data-link={SYSTEM_CONST.URL.CONFIRM} onClick={onClickLink}>confirm</span></li>
+      <li><span data-link={SYSTEM_CONST.URL.ABOUT}   onClick={onClickLink}>about</span></li>
+      <li><span data-link={SYSTEM_CONST.URL.LOGIN}   onClick={onClickLink}>ログアウト</span></li>
     </ul>
   );
 

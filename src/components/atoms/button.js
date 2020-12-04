@@ -16,6 +16,7 @@ const Button = ({params}) => {
       className={style}
     >
       {text}
+      
     </button>
   );
 };
