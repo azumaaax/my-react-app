@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './login.module.scss';
-import SYSTEM_CONST from '../../system_const';
+
 
 
 const Login = () => {
@@ -8,7 +8,6 @@ const Login = () => {
   // 認証
   const onClickLogin = () => {
     console.log('auth');
-    location.href = SYSTEM_CONST.URL.TOP;
   };
 
 

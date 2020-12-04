@@ -6,7 +6,7 @@ const Top = () => {
   return (
     <Single params={{
       title: 'confirm',
-      context: 'ログイン後のトップページ',
+      context: '紹介ページ',
     }} />
   );
 };

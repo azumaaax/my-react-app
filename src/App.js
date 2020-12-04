@@ -3,16 +3,17 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from './components/pages/login';
 import Confirm from './components/pages/confirm';
 import Top from './components/pages/top';
+import About from './components/pages/about';
 import './App.scss';
-import SYSTEM_CONST from './system_const';
 
 
 function App() {
   return (
     <Router>
-      <Route exact path={SYSTEM_CONST.URL.LOGIN} component={Login}></Route>
-      <Route path={SYSTEM_CONST.URL.TOP} component={Top}></Route>
-      <Route path={SYSTEM_CONST.URL.CONFIRM} component={Confirm}></Route>
+      <Route exact path="/" component={Login}></Route>
+      <Route path="/top" component={Top}></Route>
+      <Route path="/confirm" component={Confirm}></Route>
+      <Route path="/about" component={About}></Route>
     </Router>
   );
 }
