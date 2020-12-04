@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './login.module.scss';
 import SYSTEM_CONST from '../../system_const';
-
+import Button from '../atoms/button';
 
 const Login = () => {
 
@@ -27,7 +27,10 @@ const Login = () => {
       </dl>
 
       <div className={styles.box}>
-        <button onClick={onClickLogin} className={`${styles.btn} btn btn-primary`}>ログイン</button>
+        <Button params={{
+          text: 'ログイン',
+          onClick: onClickLogin,
+        }} />
       </div>
     </>
   );
