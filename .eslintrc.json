@@ -21,6 +21,7 @@
         "semi": ["warn", "always"],
         "quotes": ["warn", "single"],
         "indent": ["error", 2],
-        "linebreak-style": [ "warn", "unix"]
+        "linebreak-style": [ "warn", "unix"],
+        "react/prop-types": 0
     }
 }

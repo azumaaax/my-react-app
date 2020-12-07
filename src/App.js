@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-// import './App.css';
-import styles from './App.module.scss';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Login from './components/pages/login';
+import Confirm from './components/pages/confirm';
+import Top from './components/pages/top';
+import About from './components/pages/about';
+import './App.scss';
+import SYSTEM_CONST from './system_const';
+
+// test commmit
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className={styles.test}>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Route path={SYSTEM_CONST.URL.LOGIN}   component={Login} exact></Route>
+      <Route path={SYSTEM_CONST.URL.TOP}     component={Top}></Route>
+      <Route path={SYSTEM_CONST.URL.CONFIRM} component={Confirm}></Route>
+      <Route path={SYSTEM_CONST.URL.ABOUT}   component={About}></Route>
+    </Router>
   );
 }
 
