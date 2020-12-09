@@ -1,7 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, } from 'react';
 import styles from './login.module.scss';
 import SYSTEM_CONST from '../../system_const';
 import Button from '../atoms/button';
+import {
+  useDispatch,
+  // useSelector,
+} from 'react-redux';
+
+import {
+  init,
+  auth,
+} from '../../modules/login';
+
+
 
 const ID = {
   MIN: 1,
@@ -11,16 +22,24 @@ const ID = {
 const Login = () => {
 
   const [id, setID] = useState('');
-
+  const dispatch = useDispatch();
+  // const login = useSelector(state => state.login);
 
   // init
   useEffect( ()=> {
-    console.log('change id');
-  }, [id]);
+    dispatch(init());
+  }, []);
 
 
   // auth
   const onClickLogin = () => {
+    const params = {
+      id: 'test',
+      password: 'test',
+    };
+
+    dispatch(auth(params));
+
     location.href = SYSTEM_CONST.URL.TOP;
   };
 

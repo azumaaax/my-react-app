@@ -3,10 +3,35 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import reducers from './modules/reducers';
+import { createLogger } from 'redux-logger';
+
+const middlewares = [
+  thunk,
+  createLogger({
+    diff: true,
+    collapsed: false,
+  }),
+];
+
+const rootReducer = (state, action) =>
+  reducers(state, action);
+
+const store = createStore(
+  rootReducer,
+  applyMiddleware(...middlewares)
+);
+
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 
