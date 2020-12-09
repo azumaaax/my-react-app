@@ -2,16 +2,13 @@ import React, { useEffect, useState, } from 'react';
 import styles from './login.module.scss';
 import SYSTEM_CONST from '../../system_const';
 import Button from '../atoms/button';
-import {
-  useDispatch,
-  // useSelector,
-} from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { useHistory, } from 'react-router-dom';
 
 import {
   init,
   auth,
 } from '../../modules/login';
-
 
 
 const ID = {
@@ -26,9 +23,9 @@ const PASSWORD = {
 
 const Login = () => {
 
-  const [id, setID] = useState('');
+  const history = useHistory();
   const dispatch = useDispatch();
-  // const login = useSelector(state => state.login);
+  const [id, setID] = useState('');
   const [password, setPASSWORD] = useState('');
   const [error, setERROR] = useState([]);
 
@@ -38,7 +35,6 @@ const Login = () => {
   }, []);
 
   useEffect( ()=> {
-    console.log('change id');
     formValidation();
   }, [id, password]);
 
@@ -46,13 +42,12 @@ const Login = () => {
   // auth
   const onClickLogin = () => {
     const params = {
-      id: 'test',
-      password: 'test',
+      id,
+      password,
     };
 
     dispatch(auth(params));
-
-    location.href = SYSTEM_CONST.URL.TOP;
+    history.push(SYSTEM_CONST.URL.TOP);
   };
 
 
@@ -66,7 +61,7 @@ const Login = () => {
 
   // validation
   const formValidation = () => {
-    let err = [];
+    const err = [];
     if (ID.MAX <= id.length) {
       err.push(`idは${ID.MAX}文字以下で入力してください`);
     }

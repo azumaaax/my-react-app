@@ -28,9 +28,12 @@ export function init() {
 export function auth(params) {
   console.log({params});
 
-  return async (dispatch) => {
+  return dispatch => {
     try {
-      const data = {auth : true};
+      const data = {
+        auth : true,
+        ...params,
+      };
 
       const action = {
         type: AUTH,
