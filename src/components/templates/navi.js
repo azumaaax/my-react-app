@@ -1,12 +1,15 @@
 import React from 'react';
 import SYSTEM_CONST from '../../system_const';
 import styles from './navi.module.scss';
+import { useHistory, } from 'react-router-dom';
 
 const Navi = () => {
 
+  const history = useHistory();
+
   // anchor link
   const onClickLink = e =>
-    location.href = e.currentTarget.dataset.link;
+    history.push(e.currentTarget.dataset.link);
 
 
   return (

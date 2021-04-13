@@ -1,7 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, } from 'react';
 import styles from './login.module.scss';
 import SYSTEM_CONST from '../../system_const';
 import Button from '../atoms/button';
+import { useDispatch } from 'react-redux';
+import { useHistory, } from 'react-router-dom';
+
+import {
+  init,
+  auth,
+} from '../../modules/login';
+
 
 const ID = {
   MIN: 1,
@@ -15,21 +23,31 @@ const PASSWORD = {
 
 const Login = () => {
 
+  const history = useHistory();
+  const dispatch = useDispatch();
   const [id, setID] = useState('');
   const [password, setPASSWORD] = useState('');
   const [error, setERROR] = useState([]);
 
-
   // init
   useEffect( ()=> {
-    console.log('change id');
+    dispatch(init());
+  }, []);
+
+  useEffect( ()=> {
     formValidation();
   }, [id, password]);
 
 
   // auth
   const onClickLogin = () => {
-    location.href = SYSTEM_CONST.URL.TOP;
+    const params = {
+      id,
+      password,
+    };
+
+    dispatch(auth(params));
+    history.push(SYSTEM_CONST.URL.TOP);
   };
 
 
@@ -43,7 +61,7 @@ const Login = () => {
 
   // validation
   const formValidation = () => {
-    let err = [];
+    const err = [];
     if (ID.MAX <= id.length) {
       err.push(`idは${ID.MAX}文字以下で入力してください`);
     }
