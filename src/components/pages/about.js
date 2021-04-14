@@ -1,7 +1,7 @@
 import React from 'react';
 import Single from '../templates/single';
 
-const Top = () => {
+const About = () => {
 
   return (
     <Single params={{
@@ -11,4 +11,4 @@ const Top = () => {
   );
 };
 
-export default Top;
+export default About;
