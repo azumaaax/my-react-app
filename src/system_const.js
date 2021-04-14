@@ -7,6 +7,9 @@ const SYSTEM_CONST = {
     ABOUT: '/about',
     COMPANY: '/company',
   },
+  API: {
+    USER: { method: 'get', path: '/user/' },
+  },
 };
 
 export default SYSTEM_CONST;

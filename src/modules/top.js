@@ -1,4 +1,6 @@
 
+// import { getUser } from '../modules/apiClient';
+
 // Actions
 const dataname = 'TOP';
 const INIT = `${dataname}/INIT`;
@@ -6,9 +8,10 @@ const INIT = `${dataname}/INIT`;
 
 // Action Creator
 export function init() {
-  return dispatch => {
+  return async(dispatch) => {
     try {
       const data = {  };
+      // const data = await getUser({id: 1,});
 
       const action = {
         type: INIT,
