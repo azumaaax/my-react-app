@@ -1,6 +1,4 @@
 
-// import { getUser } from '../modules/apiClient';
-
 // Actions
 const dataname = 'TOP';
 const INIT = `${dataname}/INIT`;

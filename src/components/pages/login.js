@@ -10,6 +10,13 @@ import {
   auth,
 } from '../../modules/login';
 
+/**
+ * logger
+ * https://github.com/pimterry/loglevel
+ */
+import log from 'loglevel';
+log.setDefaultLevel(process.env.REACT_APP_LOG_LEVEL);
+
 
 const ID = {
   MIN: 1,
@@ -22,6 +29,9 @@ const PASSWORD = {
 };
 
 const Login = () => {
+
+  // logging
+  log.debug('start');
 
   const history = useHistory();
   const dispatch = useDispatch();
