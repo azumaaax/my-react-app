@@ -13,7 +13,7 @@ const middlewares = [
   thunk,
   createLogger({
     diff: true,
-    collapsed: false,
+    collapsed: true,
   }),
 ];
 
