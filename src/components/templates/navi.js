@@ -17,6 +17,7 @@ const Navi = () => {
       <li><span data-link={SYSTEM_CONST.URL.TOP}     onClick={onClickLink}>top</span></li>
       <li><span data-link={SYSTEM_CONST.URL.CONFIRM} onClick={onClickLink}>confirm</span></li>
       <li><span data-link={SYSTEM_CONST.URL.ABOUT}   onClick={onClickLink}>about</span></li>
+      <li><span data-link={SYSTEM_CONST.URL.COMPANY} onClick={onClickLink}>company</span></li>
       <li><span data-link={SYSTEM_CONST.URL.LOGIN}   onClick={onClickLink}>ログアウト</span></li>
     </ul>
   );

@@ -4,6 +4,7 @@ import Login from './components/pages/login';
 import Confirm from './components/pages/confirm';
 import Top from './components/pages/top';
 import About from './components/pages/about';
+import Company from './components/pages/company';
 import './App.scss';
 import SYSTEM_CONST from './system_const';
 
@@ -16,6 +17,7 @@ function App() {
       <Route path={SYSTEM_CONST.URL.TOP}     component={Top}></Route>
       <Route path={SYSTEM_CONST.URL.CONFIRM} component={Confirm}></Route>
       <Route path={SYSTEM_CONST.URL.ABOUT}   component={About}></Route>
+      <Route path={SYSTEM_CONST.URL.COMPANY} component={Company}></Route>
     </Router>
   );
 }

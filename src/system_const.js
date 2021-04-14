@@ -5,6 +5,7 @@ const SYSTEM_CONST = {
     CONFIRM: '/confirm',
     LOGIN: '/',
     ABOUT: '/about',
+    COMPANY: '/company',
   },
 };
 
