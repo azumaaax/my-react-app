@@ -1,0 +1,23 @@
+{
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.showSlider": "always",
+    "editor.renderControlCharacters": true,
+    "editor.renderLineHighlight": "all",
+    "editor.renderWhitespace": "all",
+    "editor.tabSize": 2,
+    "emmet.variables": {
+        "lang": "ja"
+    },
+    "emmet.includeLanguages": {
+        "vue": "html",
+        "php": "html",
+        "django-html": "html",
+        "jsx": "html",
+    },
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "[markdown]": {
+        "files.trimTrailingWhitespace": false
+    },
+}
