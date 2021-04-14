@@ -9,4 +9,4 @@ const SYSTEM_CONST = {
   },
 };
 
-export default SYSTEM_CONST; 
+export default SYSTEM_CONST;

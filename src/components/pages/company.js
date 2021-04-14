@@ -8,7 +8,7 @@ const Company = () => {
       title: 'company',
       context: '企業のページ',
     }} />
-    
+
   );
 };
 
