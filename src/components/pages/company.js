@@ -8,13 +8,15 @@ import {
 
 import {
   init,
-} from '../../modules/top';
+} from '../../modules/company';
 
 const Company = () => {
 
   const dispatch = useDispatch();
   const company = useSelector(state => state.company);
 
+  console.log(company);
+  
   // init
   useEffect( ()=> {
     dispatch(init());

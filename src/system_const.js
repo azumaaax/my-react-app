@@ -9,6 +9,7 @@ const SYSTEM_CONST = {
   },
   API: {
     USER: { method: 'get', path: '/user/' },
+    COMPANY: { method: 'get', path: '/company/' },
   },
 };
 

@@ -8,3 +8,11 @@ export function getUser(params) {
     params
   );
 }
+
+export function getCompany(params) {
+
+  api (
+    SYSTEM_CONST.API.USER,
+    params
+  );
+}
