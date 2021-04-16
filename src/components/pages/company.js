@@ -21,7 +21,6 @@ const Company = () => {
 
   const dispatch = useDispatch();
   const company = useSelector(state => state.company);
-
   log.debug(company);
 
   // init

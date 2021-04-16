@@ -30,9 +30,6 @@ const PASSWORD = {
 
 const Login = () => {
 
-  // logging
-  log.debug('start');
-
   const history = useHistory();
   const dispatch = useDispatch();
   const [id, setID] = useState('');

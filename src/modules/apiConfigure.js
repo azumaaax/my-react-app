@@ -1,4 +1,6 @@
 import axiosBase from 'axios';
+import log from 'loglevel';
+log.setDefaultLevel(process.env.REACT_APP_LOG_LEVEL);
 
 /**
  * 共通 - 設定
@@ -17,7 +19,7 @@ const axios = axiosBase.create({
  * @params {object} config
  */
 axios.interceptors.request.use((config) => {
-  console.log('interceptors.request');
+  log.debug('interceptors.request');
   return config;
 });
 
@@ -26,7 +28,7 @@ axios.interceptors.request.use((config) => {
  * @params {object} config
  */
 axios.interceptors.response.use((response) => {
-  console.log('interceptors.response');
+  log.debug('interceptors.response');
   return response;
 });
 
@@ -34,7 +36,7 @@ axios.interceptors.response.use((response) => {
 /**
  * API call
  */
-export const api = (data, params = {}, callback) => {
+export const api = async (data, params = {}, callback) => {
 
   let req = {};
   if (data.method === 'get') {
@@ -54,14 +56,13 @@ export const api = (data, params = {}, callback) => {
   }
 
   // run
-  axios(req)
+  return await axios(req)
     .then(res => {
-      console.log(res);
 
-      if ( callback )
-        callback();
+      return callback ?
+        callback():
+        res.data;
 
-      return res;
     })
-    .catch(err => console.log(err));
+    .catch(err => log.warn(err));
 };

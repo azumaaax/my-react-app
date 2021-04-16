@@ -1,5 +1,7 @@
 
 import { getCompany } from '../modules/apiClient';
+import log from 'loglevel';
+log.setDefaultLevel(process.env.REACT_APP_LOG_LEVEL);
 
 // Actions
 const dataname = 'COMPANY';
@@ -8,7 +10,7 @@ const INIT = `${dataname}/INIT`;
 
 // Action Creator
 export function init() {
-  return async(dispatch) => {
+  return async (dispatch) => {
     try {
       // const data = [
       //   {'name': '株式会社AAA'},
@@ -16,11 +18,11 @@ export function init() {
       //   {'name': '株式会社CCC'},
       // ];
       const data = await getCompany({id: 1,});
-      console.log(data);
+      log.debug(data);
 
       const action = {
         type: INIT,
-        payload: data
+        payload: data,
       };
 
       dispatch(action);

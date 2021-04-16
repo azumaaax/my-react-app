@@ -3,16 +3,18 @@ import SYSTEM_CONST from '../system_const';
 
 export function getUser(params) {
 
-  api (
+  return api (
     SYSTEM_CONST.API.USER,
     params
   );
 }
 
-export function getCompany(params) {
+export async function getCompany(params) {
 
-  return api (
+  const res = await api (
     SYSTEM_CONST.API.COMPANY,
     params
   );
+
+  return res;
 }
