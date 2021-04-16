@@ -1,5 +1,5 @@
 
-// import { getCompany } from '../modules/apiClient';
+import { getCompany } from '../modules/apiClient';
 
 // Actions
 const dataname = 'COMPANY';
@@ -10,12 +10,13 @@ const INIT = `${dataname}/INIT`;
 export function init() {
   return async(dispatch) => {
     try {
-      const data = [
-        {'name': '株式会社AAA'},
-        {'name': '株式会社BBB'},
-        {'name': '株式会社CCC'},
-      ];
-      // const data = await getCompany({id: 1,});
+      // const data = [
+      //   {'name': '株式会社AAA'},
+      //   {'name': '株式会社BBB'},
+      //   {'name': '株式会社CCC'},
+      // ];
+      const data = await getCompany({id: 1,});
+      console.log(data);
 
       const action = {
         type: INIT,

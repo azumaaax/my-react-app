@@ -9,7 +9,7 @@ const SYSTEM_CONST = {
   },
   API: {
     USER: { method: 'get', path: '/user/' },
-    COMPANY: { method: 'get', path: '/company/' },
+    COMPANY: { method: 'get', path: 'http://192.168.33.10:8080/api/company/' },
   },
 };
 

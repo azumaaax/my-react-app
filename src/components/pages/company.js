@@ -10,13 +10,20 @@ import {
   init,
 } from '../../modules/company';
 
+/**
+ * logger
+ * https://github.com/pimterry/loglevel
+ */
+import log from 'loglevel';
+log.setDefaultLevel(process.env.REACT_APP_LOG_LEVEL);
+
 const Company = () => {
 
   const dispatch = useDispatch();
   const company = useSelector(state => state.company);
 
-  console.log(company);
-  
+  log.debug(company);
+
   // init
   useEffect( ()=> {
     dispatch(init());

@@ -60,6 +60,8 @@ export const api = (data, params = {}, callback) => {
 
       if ( callback )
         callback();
+
+      return res;
     })
     .catch(err => console.log(err));
-}
+};
