@@ -1,0 +1,31 @@
+
+@import "../../variables.scss";
+
+
+.title {
+    font-size: $font-l;
+  }
+
+.list {
+  width: 300px;
+  font-size: 15px;
+  border: 1px solid gray;
+  text-align: center;
+
+  tr {
+    border: 1px solid gray;
+    th {
+      border: 1px solid gray;
+      font-weight: bold;
+    }
+    td {
+      border: 1px solid gray;
+      span {
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+      }
+    }
+  }
+}

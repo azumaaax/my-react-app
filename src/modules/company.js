@@ -9,13 +9,35 @@ const INIT = `${dataname}/INIT`;
 
 
 // Action Creator
-export function init() {
+export function init(param = {}) {
   return async (dispatch) => {
     try {
 
       // const data = await getCompany({id: 1,});
+      log.debug(param);
       const data = await getCompany();
       log.debug(data);
+
+      const action = {
+        type: INIT,
+        payload: data,
+      };
+
+      dispatch(action);
+
+    } catch(err) {
+      console.error(err);
+    }
+  };
+}
+
+// Action Creator
+export function del(param = {}) {
+  return async (dispatch) => {
+    try {
+
+      log.debug(param);
+      const data = await deleteCompany(param);
 
       const action = {
         type: INIT,
