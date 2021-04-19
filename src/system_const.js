@@ -5,7 +5,7 @@ const SYSTEM_CONST = {
     CONFIRM: '/confirm',
     LOGIN: '/',
     ABOUT: '/about',
-    COMPANY: '/company/index',
+    COMPANY: '/company/',
     COMPANY_REGIST: '/company/regist',
   },
   API: {
