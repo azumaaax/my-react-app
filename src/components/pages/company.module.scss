@@ -1,31 +1,43 @@
 
 @import "../../variables.scss";
 
+@mixin tableBorder($color: gray) {
+  border-top: 1px solid $color;
+  tr {
+    border-bottom: 1px solid $color;
+    &:last-child() {
+      border-bottom: none;
+    }
+  }
+
+  th, td {
+    border-left: 1px solid $color;
+    &:last-child {
+      border-right: 1px solid $color;
+    }
+  }
+}
+
 
 .title {
     font-size: $font-l;
   }
 
 .list {
-  width: 300px;
-  font-size: 15px;
-  border: 1px solid gray;
-  text-align: center;
+  width: 80%;
+  margin :1rem auto;
+  font-size: $font-default;
 
-  tr {
-    border: 1px solid gray;
-    th {
-      border: 1px solid gray;
-      font-weight: bold;
-    }
-    td {
-      border: 1px solid gray;
-      span {
-        cursor: pointer;
-        &:hover {
-            text-decoration: underline;
-        }
-      }
-    }
+  // border
+  @include tableBorder();
+
+  td, th {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  th {
+    background-color: gray;
+    color: white;
   }
 }
