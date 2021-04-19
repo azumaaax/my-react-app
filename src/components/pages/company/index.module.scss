@@ -1,5 +1,5 @@
 
-@import "../../variables.scss";
+@import "../../../variables.scss";
 
 @mixin tableBorder($color: gray) {
   border-top: 1px solid $color;

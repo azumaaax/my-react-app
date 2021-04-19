@@ -1,9 +1,9 @@
 import React, { useEffect, } from 'react';
-import SYSTEM_CONST from '../../system_const';
-import styles from './company.module.scss';
+import SYSTEM_CONST from '../../../system_const';
+import styles from './index.module.scss';
 import { useHistory, } from 'react-router-dom';
-import Navi from '../templates/navi';
-import Button from '../atoms/button';
+import Navi from '../../templates/navi';
+import Button from '../../atoms/button';
 
 import {
   useDispatch,
@@ -13,7 +13,7 @@ import {
 import {
   init,
   del,
-} from '../../modules/company';
+} from '../../../modules/company';
 
 import log from 'loglevel';
 log.setDefaultLevel(process.env.REACT_APP_LOG_LEVEL);
@@ -39,7 +39,7 @@ const Company = () => {
   const onClickEdit = (params) => {
     log.debug(params);
     dispatch(init(params));
-    history.push(SYSTEM_CONST.URL.COMPANY_INPUT);
+    history.push(SYSTEM_CONST.URL.COMPANY_REGIST);
   };
 
   // delete
@@ -54,18 +54,18 @@ const Company = () => {
       <tr>
         <td>{company[i].id}</td>
         <td>
-          <span data-link={SYSTEM_CONST.URL.COMPANY_INPUT} onClick={onClickLink}>
+          <span data-link={SYSTEM_CONST.URL.COMPANY_REGIST} onClick={onClickLink}>
             {company[i].name}
           </span>
         </td>
         <td>
           <Button params={{
             text: '編集',
-            onClick: onClickEdit({id:company[i].id}),
+            onClick: () => onClickEdit({id:company[i].id}),
           }} />
           <Button params={{
             text: '削除',
-            onClick: onClickDelete({id:company[i].id}),
+            onClick: () => onClickDelete({id:company[i].id}),
           }} />
         </td>
       </tr>

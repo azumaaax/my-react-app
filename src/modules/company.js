@@ -1,5 +1,5 @@
 
-import { getCompany } from '../modules/apiClient';
+import { getCompany, deleteCompany } from '../modules/apiClient';
 import log from 'loglevel';
 log.setDefaultLevel(process.env.REACT_APP_LOG_LEVEL);
 
@@ -15,7 +15,7 @@ export function init(param = {}) {
 
       // const data = await getCompany({id: 1,});
       log.debug(param);
-      const data = await getCompany();
+      const data = await getCompany(param);
       log.debug(data);
 
       const action = {

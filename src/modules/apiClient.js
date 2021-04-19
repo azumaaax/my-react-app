@@ -19,20 +19,20 @@ export async function getCompany(params) {
   return res;
 }
 
-export async function addCompany(params) {
+export async function registCompany(params) {
 
   const res = await api (
-    SYSTEM_CONST.API.COMPANY_POST,
+    SYSTEM_CONST.API.COMPANY_REGIST,
     params
   );
 
   return res;
 }
 
-export async function editCompany(params) {
+export async function updateCompany(params) {
 
   const res = await api (
-    SYSTEM_CONST.API.COMPANY_PUT,
+    SYSTEM_CONST.API.COMPANY_UPDATE,
     params
   );
 

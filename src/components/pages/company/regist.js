@@ -1,5 +1,5 @@
 import React, { useEffect, } from 'react';
-import List from '../templates/list';
+import List from '../../templates/list';
 
 import {
   useDispatch,
@@ -8,7 +8,7 @@ import {
 
 import {
   init,
-} from '../../modules/company';
+} from '../../../modules/company';
 
 import log from 'loglevel';
 log.setDefaultLevel(process.env.REACT_APP_LOG_LEVEL);

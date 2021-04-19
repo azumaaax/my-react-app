@@ -4,7 +4,7 @@ import Login from './components/pages/login';
 import Confirm from './components/pages/confirm';
 import Top from './components/pages/top';
 import About from './components/pages/about';
-import Company from './components/pages/company';
+import Company from './components/pages/company/index';
 import './App.scss';
 import SYSTEM_CONST from './system_const';
 
